@@ -1,0 +1,13 @@
+.carousel {
+    display: flex;
+    width: 100%;
+    overflow-x: scroll;
+    }
+
+.slide {
+    width: 200px;
+    margin: 0 10px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}

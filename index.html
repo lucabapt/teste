@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html
+lang="pt-BR">
+<head>
+<meta 
+charset="UTF-8">
+<meta
+name="viewport"
+ 
+content="width=device-width, initial-scale=1.0">
+
+<a href="/style.css"></a>
+    
+<title>Carousel</title>
+    
+</head>
+<body>
+    <h1>Carousel</h1>
+    <div class="carousel">
+        <div> <img src="./slide1.jpg" alt="100px"> </div>
+        <div> <img src="./slide2.jpg" alt="100px"> </div>
+        <div> <img src="./slide3.jpg" alt="100px"> </div>
+        <div> <img src="./slide4.jpg" alt="100px"> </div>
+        <div> <img src="./slide5.jpg" alt="100px"> </div>
+    </div>
+
+    <script>
+        const carousel = document.querySelector('.carousel');
+
+        let currentSlide = 0;
+
+        const nextSlide = () => {
+            currentSlide++;
+
+            if (currentSlide === carousel.children.length) {
+                currentSlide = 0;
+            }
+
+            carousel.style.transform = `translateX(-${currentSlide * 210}px)`;
+        };
+
+        const prevSlide = () => {
+            currentSlide--;
+
+            if (currentSlide < 0) {
+                currentSlide = carousel.children.length - 1;
+            }
+
+            carousel.style.transform = `translateX(-${currentSlide * 210}px)`;
+        };
+
+        document.getElementById('next').addEventListener('click', nextSlide);
+        document.getElementById('prev').addEventListener('click', prevSlide);
+    </script>
+
+    <button id="prev">Previous</button>
+    <button id="next">Next</button>
+</body>
+</html>
